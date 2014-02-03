@@ -34,7 +34,7 @@ Build-Depends: debhelper (>= 9),
                mate-common,
                docbook-utils,
                libgcrypt11-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Homepage: http://www.mate-desktop.org/
 
 Package: mate-power-manager
