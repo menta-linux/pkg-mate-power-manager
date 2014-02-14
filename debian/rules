@@ -1,12 +1,16 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@
+	dh $@ --with quilt
 
 override_dh_install:
 	dh_install --list-missing
 
 override_dh_auto_configure:
+	# We patched the configure.ac, rebuild configure
+	REQUIRED_AUTOMAKE_VERSION=1.9 USE_MATE2_MACROS=1 USE_COMMON_DOC_BUILD=yes \
+		PKG_NAME=mate-power-manager mate-autogen
+
 	dh_auto_configure -- \
 		--libexecdir=/usr/lib/mate-power-manager \
 		--disable-scrollkeeper \
