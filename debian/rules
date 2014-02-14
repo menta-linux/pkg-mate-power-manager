@@ -12,7 +12,7 @@ override_dh_auto_configure:
 		PKG_NAME=mate-power-manager mate-autogen
 
 	dh_auto_configure -- \
-		--libexecdir=/usr/lib/mate-power-manager \
+		--libexecdir=/usr/lib/$(shell dpkg-architecture -qDEB_BUILD_MULTIARCH)/mate-power-manager \
 		--disable-scrollkeeper \
 		--enable-applets \
 		--with-gtk=2.0
