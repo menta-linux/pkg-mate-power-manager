@@ -1,5 +1,7 @@
 mate-power-manager (1.8.0-1) UNRELEASED; urgency=low
 
   * Initial release. (Closes: #734868)
+  * debian/watch: 
+    + Use tagged CGit tarball snapshots as upstream source.
 
  -- Vangelis Mouhtsis <vangelis@gnugr.org>  Sat, 19 Apr 2014 13:06:34 +0300
