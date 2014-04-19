@@ -1,2 +1,4 @@
 version=3
-http://pub.mate-desktop.org/releases/(\d\.(2|4|6|8|0))/mate-power-manager-(.*)\.tar\.xz
+opts=dversionmangle=s/\+dfsg1// \
+http://git.mate-desktop.org/mate-power-manager/ \
+    snapshot/mate-power-manager-(\d\.(?:[0-9]+|)[24680]\.\d)\.tar\.xz
