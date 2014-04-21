@@ -1,3 +1,7 @@
 version=3
+<<<<<<< HEAD
+=======
+opts=dversionmangle=s/\+dfsg1// \
+>>>>>>> d01ec962a4ae8edfcf4bfc83ed869dce8a77a10d
 http://git.mate-desktop.org/mate-power-manager/ \
     snapshot/mate-power-manager-(\d\.(?:[0-9]+|)[24680]\.\d)\.tar\.xz
