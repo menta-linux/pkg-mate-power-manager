@@ -16,6 +16,7 @@ override_dh_install:
 	dh_install --list-missing
 
 override_dh_auto_configure:
+	cp -v debian/man/*.sgml man/
 	# ustream is without configure. autogen.sh will create it
 	NOCONFIGURE=1 ./autogen.sh
 	dh_auto_configure $(DHFLAGS) -- \
@@ -27,6 +28,10 @@ override_dh_auto_configure:
 
 override_dh_strip:
 	dh_strip --dbg-package=mate-power-manager-dbg
+
+override_dh_clean:
+	rm -f man/mate-power-manager-bugreport.sgml
+	dh_clean
 
 get-orig-source: $(PKG)_$(VER)$(DTYPE).orig.tar.xz $(info I: $(PKG)_$(VER)$(DTYPE))
 	@
