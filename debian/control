@@ -97,5 +97,7 @@ Description: power management tool for the MATE desktop (debugging symbols)
  power saving, and can trigger suspend-to-RAM, hibernate or shutdown
  events, all integrated to other components of the MATE desktop.
  .
+ This package contains debugging symbols for mate-power-manager.
+ .
  The debugging symbols are installed in /usr/lib/debug and will
  automatically be used by gdb.
