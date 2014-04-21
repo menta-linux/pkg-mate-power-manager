@@ -89,9 +89,77 @@ Copyright: 2004-2005, William Jon McCann <mccann@jhu.edu>
            2005-2009, Richard Hughes <richard@hughsie.com>
 License: GPL-2+
 
-Files: docs/config.xsl
+Files: applets/Makefile.am
+       applets/brightness/Makefile.am
+       applets/brightness/*.xml
+       applets/brightness/*.in
+       applets/inhibit/Makefile.am
+       applets/inhibit/*.xml
+       applets/inhibit/*.in
+       data/icons/22x22/actions/Makefile.am
+       data/icons/22x22/actions/*.png
+       data/icons/22x22/apps/Makefile.am
+       data/icons/22x22/apps/*.png
+       data/icons/22x22/status/Makefile.am
+       data/icons/22x22/status/*.png
+       data/icons/22x22/Makefile.am
+       data/icons/16x16/actions/Makefile.am
+       data/icons/16x16/actions/*.png
+       data/icons/16x16/apps/Makefile.am
+       data/icons/16x16/apps/*.png
+       data/icons/16x16/status/Makefile.am
+       data/icons/16x16/status/*.png
+       data/icons/16x16/Makefile.am
+       data/icons/scalable/actions/Makefile.am
+       data/icons/scalable/actions/*.svg
+       data/icons/scalable/apps/Makefile.am
+       data/icons/scalable/apps/*.svg
+       data/icons/scalable/status/Makefile.am
+       data/icons/scalable/status/*.svg
+       data/icons/scalable/Makefile.am
+       data/icons/32x32/actions/Makefile.am
+       data/icons/32x32/actions/*.png
+       data/icons/32x32/apps/Makefile.am
+       data/icons/32x32/apps/*.png
+       data/icons/32x32/status/Makefile.am
+       data/icons/32x32/status/*.png
+       data/icons/32x32/Makefile.am
+       data/icons/24x24/actions/Makefile.am
+       data/icons/24x24/actions/*.png
+       data/icons/24x24/apps/Makefile.am
+       data/icons/24x24/apps/*.png
+       data/icons/24x24/status/Makefile.am
+       data/icons/24x24/status/*.png
+       data/icons/24x24/Makefile.am
+       data/icons/48x48/actions/Makefile.am
+       data/icons/48x48/actions/*.png
+       data/icons/48x48/apps/Makefile.am
+       data/icons/48x48/apps/*.png
+       data/icons/48x48/status/Makefile.am
+       data/icons/48x48/status/*.png
+       data/icons/48x48/Makefile.am
+       data/icons/Makefile.am
+       data/Makefile.am
+       data/*.ui
+       data/*.in
+       docs/Makefile.am
+       docs/config.xsl
+       docs/docbook.css
+       man/Makefile.am
+       man/*.sgml
+       patches/gpm-manager.patch
+       po/LINGUAS
+       po/POTFILES.*
+       policy/Makefile.am
+       policy/*.in2
+       src/Makefile.am
        src/gpm-marshal.c
        src/gpm-marshal.h
+       src/*.xml
+       tools/Makefile.am
+       Makefile.am
+       autogen.sh
+       configure.ac
 Copyright: *No copyright*
 License: GPL-2+
 Comment:
@@ -131,6 +199,27 @@ Copyright: 2002, Jorn Baayen
            2003-2004, Colin Walters <walters@verbum.org>
            2005-2007, Richard Hughes <richard@hughsie.com>
 License: GPL-2+
+
+Files: po/*.po
+Copyright: 2005-2010, Free Software Foundation, Inc.
+           2005-2006, Adam Weinberger <adamw@gnome.org>
+           2005-2009, Richard Hughes <richard@hughsie.com>
+           2005-2010, THE mate-power-manager'S COPYRIGHT HOLDER
+           2006–2010, The Gnome Project.
+           2006, Sharif FarsiWeb, Inc.
+           2006-2007, Rosetta Contributors and Canonical Ltd.
+           2008, Ihar Hrachyshka
+           2009, The Gnome Foundation.
+License: GPL-2+
+Comment:
+ Using license from COPYING file.
+
+Files: m4/ltsugar.m4
+Copyright: 2004-2008, Free Software Foundation, Inc.
+License:
+ This file is free software; the Free Software Foundation gives
+ unlimited permission to copy and/or distribute it, with or without
+ modifications, as long as this notice is preserved.
 
 Files: debian/*
 Copyright: 2011-2014, Stefano Karapetsas <stefano@karapetsas.com>
