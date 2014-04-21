@@ -9,7 +9,7 @@ VER  ?= $(subst $(DTYPE),,$(UVER))
 DHFLAGS=--parallel
 
 %:
-	dh $@ $(DHFLAGS) --with quilt
+	dh $@ $(DHFLAGS)
 
 override_dh_install:
 	dh_install --list-missing
