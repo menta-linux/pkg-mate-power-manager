@@ -1,0 +1,22 @@
+Description:  Don't build non-DFSG (GFDL 1.1 licensed) help files
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -7,7 +7,6 @@
+ 	docs						\
+ 	man						\
+ 	data						\
+-	help						\
+ 	policy						\
+ 	tools
+ 
+--- a/configure.ac
++++ b/configure.ac
+@@ -363,7 +363,6 @@
+ applets/inhibit/Makefile
+ docs/Makefile
+ man/Makefile
+-help/Makefile
+ po/Makefile.in
+ tools/Makefile
+ policy/Makefile
