@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+DEB_BUILD_PARALLEL = 1
+
 %:
 	dh $@ --with quilt
 
