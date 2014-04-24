@@ -31,6 +31,7 @@ override_dh_strip:
 
 override_dh_clean:
 	rm -f man/mate-power-manager-bugreport.sgml
+	rm -f man/mate-power-backlight-helper.sgml
 	dh_clean
 
 get-orig-source: $(PKG)_$(VER)$(DTYPE).orig.tar.xz $(info I: $(PKG)_$(VER)$(DTYPE))
