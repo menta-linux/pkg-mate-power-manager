@@ -1,3 +1,13 @@
+mate-power-manager (1.8.0+dfsg1-2) unstable; urgency=low
+
+  * debian/rules:
+    + On dh_clean also remove our copied-in man page for
+      mate-power-backlight-helper.
+  * debian/mate-power-manager-common.install:
+    + Drop mate-conf .convert files from package.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 05 May 2014 10:15:22 +0200
+
 mate-power-manager (1.8.0+dfsg1-1) unstable; urgency=low
 
   * Initial release. (Closes: #734868).
