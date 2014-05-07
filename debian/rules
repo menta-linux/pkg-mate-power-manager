@@ -13,7 +13,7 @@ DHFLAGS=--parallel
 
 override_dh_install:
 	mv debian/tmp/usr/bin/mate-power-bugreport.sh debian/tmp/usr/bin/mate-power-manager-bugreport
-	dh_install --list-missing
+	dh_install --fail-missing
 
 override_dh_auto_configure:
 	cp -v debian/man/*.sgml man/
