@@ -1,0 +1,103 @@
+Description: Port mate-power-manager to upower-0.99 API (patch 2)
+Author: Stefano Karapetsas <stefano@karapetsas.com>
+Origin: http://git.mate-desktop.org/mate-power-manager/patch/?id=1fb28703f76a97421f3554d5c553b06707f890a7
+---
+--- a/src/gpm-engine.c
++++ b/src/gpm-engine.c
+@@ -83,6 +83,9 @@
+ 
+ static UpDevice *gpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device);
+ static UpDevice *gpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device);
++#if UP_CHECK_VERSION (0, 99, 0)
++static void gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine);
++#endif
+ 
+ typedef enum {
+ 	GPM_ENGINE_WARNING_NONE = 0,
+@@ -758,6 +761,13 @@
+ 		g_object_get (composite, "state", &state, NULL);
+ 		g_object_set_data (G_OBJECT(composite), "engine-state-old", GUINT_TO_POINTER(state));
+ 	}
++
++#if UP_CHECK_VERSION (0, 99, 0)
++	if (kind == UP_DEVICE_KIND_BATTERY || kind == UP_DEVICE_KIND_UPS || kind == UP_DEVICE_KIND_LINE_POWER)
++		return;
++	g_signal_connect (device, "notify", G_CALLBACK (gpm_engine_device_changed_cb), engine);
++#endif
++
+ }
+ 
+ /**
+@@ -890,19 +900,20 @@
+  **/
+ static void
+ #if UP_CHECK_VERSION(0, 99, 0)
+-gpm_engine_device_changed_cb (UpClient *client, GParamSpec *pspec, GpmEngine *engine)
+-{
+-	gpm_engine_recalculate_state (engine);
+-}
++gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine)
+ #else
+ gpm_engine_device_changed_cb (UpClient *client, UpDevice *device, GpmEngine *engine)
++#endif
+ {
++#if !UP_CHECK_VERSION(0, 99, 0)
+ 	UpDeviceKind kind;
++#endif
+ 	UpDeviceState state;
+ 	UpDeviceState state_old;
+ 	GpmEngineWarning warning_old;
+ 	GpmEngineWarning warning;
+ 
++#if !UP_CHECK_VERSION(0, 99, 0)
+ 	/* get device properties */
+ 	g_object_get (device,
+ 		      "kind", &kind,
+@@ -913,6 +924,7 @@
+ 		egg_debug ("updating because %s changed", up_device_get_object_path (device));
+ 		device = gpm_engine_update_composite_device (engine, device);
+ 	}
++#endif
+ 
+ 	/* get device properties (may be composite) */
+ 	g_object_get (device,
+@@ -956,7 +968,6 @@
+ 
+ 	gpm_engine_recalculate_state (engine);
+ }
+-#endif
+ 
+ /**
+  * gpm_engine_get_devices:
+@@ -1081,10 +1092,7 @@
+ 			  G_CALLBACK (gpm_engine_device_added_cb), engine);
+ 	g_signal_connect (engine->priv->client, "device-removed",
+ 			  G_CALLBACK (gpm_engine_device_removed_cb), engine);
+-#if UP_CHECK_VERSION(0, 99, 0)
+-	g_signal_connect (engine->priv->client, "notify",
+-			  G_CALLBACK (gpm_engine_device_changed_cb), engine);
+-#else
++#if !UP_CHECK_VERSION(0, 99, 0)
+ 	g_signal_connect (engine->priv->client, "device-changed",
+ 			  G_CALLBACK (gpm_engine_device_changed_cb), engine);
+ #endif
+@@ -1114,6 +1122,11 @@
+ #endif
+ 
+ 	/* create a fake virtual composite battery */
++#if UP_CHECK_VERSION(0, 99, 0)
++	engine->priv->battery_composite = up_client_get_display_device (engine->priv->client);
++	g_signal_connect (engine->priv->client, "notify",
++			  G_CALLBACK (gpm_engine_device_changed_cb), engine);
++#else
+ 	engine->priv->battery_composite = up_device_new ();
+ 	g_object_set (engine->priv->battery_composite,
+ 		      "kind", UP_DEVICE_KIND_BATTERY,
+@@ -1122,6 +1135,7 @@
+ 		      "power-supply", TRUE,
+ 		      "is-present", TRUE,
+ 		      NULL);
++#endif
+ 
+ 	engine->priv->previous_icon = NULL;
+ 	engine->priv->previous_summary = NULL;
