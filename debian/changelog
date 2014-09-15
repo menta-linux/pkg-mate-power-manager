@@ -1,3 +1,21 @@
+mate-power-manager (1.8.0+dfsg1-4) unstable; urgency=medium
+
+  * debian/control:
+    + Modify D (mate-power-manager): Alternatively depend on systemd or
+      consolekit (preferably systemd in Debian jessie and above). (Closes:
+      #757314).
+    + Upgrade from S to D (mate-power-manager): policykit-1 (without it
+      mate-power-manager does not start). Also add mate-polkit to
+      Suggests: field. (Closes: #761471).
+  * debian/copyright:
+    + Add some stray files without license/copyright information.
+    + Add license/copyright information for src/msd-osd-window.*.
+    + Add short license name for m4/ltsugar.m4.
+    + Don't reference build-crufted files (src/gpm-marshal.c,
+      src/gpm-marshal.h).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 15 Sep 2014 12:42:39 +0200
+
 mate-power-manager (1.8.0+dfsg1-3) unstable; urgency=low
 
   [ Vangelis Mouhtsis ]
