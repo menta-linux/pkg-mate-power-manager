@@ -46,7 +46,7 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          mate-notification-daemon | notification-daemon, 
          dbus-x11,
-         consolekit,
+         systemd | consolekit,
          upower,
          mate-power-manager-common (= ${source:Version})
 Recommends: udisks
