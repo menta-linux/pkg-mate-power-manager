@@ -44,7 +44,7 @@ Package: mate-power-manager
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         mate-notification-daemon | notification-daemon, 
+         mate-notification-daemon | notification-daemon,
          dbus-x11,
          systemd | consolekit,
          upower,
