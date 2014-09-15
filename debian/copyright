@@ -162,8 +162,6 @@ Files: .tx/config
        policy/Makefile.am
        policy/*.in2
        src/Makefile.am
-       src/gpm-marshal.c
-       src/gpm-marshal.h
        src/gpm-marshal.list
        src/*.xml
        tools/Makefile.am
