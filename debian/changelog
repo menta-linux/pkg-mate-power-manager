@@ -1,3 +1,10 @@
+mate-power-manager (1.8.0+dfsg1-4.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Build-depend on libtool-bin. Closes: #761776.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 09 Oct 2014 09:57:17 +0000
+
 mate-power-manager (1.8.0+dfsg1-4) unstable; urgency=medium
 
   * debian/control:
