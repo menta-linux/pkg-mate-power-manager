@@ -230,13 +230,6 @@ License: GPL-2+
 Comment:
  Using license from COPYING file.
 
-Files: m4/ltsugar.m4
-Copyright: 2004-2008, Free Software Foundation, Inc.
-License: UNLIMITED
- This file is free software; the Free Software Foundation gives
- unlimited permission to copy and/or distribute it, with or without
- modifications, as long as this notice is preserved.
-
 Files: debian/*
 Copyright: 2011-2014, Stefano Karapetsas <stefano@karapetsas.com>
            2014, Mike Gabriel <sunweaver@debian.org>
