@@ -70,7 +70,7 @@ Files: applets/brightness/egg-dbus-monitor.c
        src/gpm-statistics.c
        src/gpm-upower.c
        src/gpm-upower.h
-       tools/mate-power-bugreport.sh
+       tools/mate-power-manager-bugreport
 Copyright: 2005-2010, Richard Hughes <richard@hughsie.com>
 License: GPL-2+
 
