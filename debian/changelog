@@ -1,3 +1,26 @@
+mate-power-manager (1.8.1+dfsg1-1) unstable; urgency=medium
+
+  [ Vangelis Mouhtsis ]
+  * debian/control:
+    + Bump Standards: to 3.9.6. No changes needed.
+
+  [ Mike Gabriel ]
+  * New upstream release.
+  * debian/patches:
+    + Drop 0001_upower-1.0_patch*.patch. Applied upstream.
+    + Drop 1002_add-keywords-key-to-desktop-files.patch. Applied upstream.
+  * debian/copyright:
+    + Reflect file name change (tools/mate-power-bugreport.sh ->
+      tools/mate-power-manager-bugreport).
+    + Drop license information for file m4/ltsugar.m4. Not ship in upstream
+      sources anymore.
+  * debian/rules:
+    + Use upstream's NEWS file as upstream ChangeLog.
+    + Stop renaming mate-power-bugreport.sh. Upstream has changed its name to
+      mate-power-manager-bugreport (as requested by us... Thanks!).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 23 Oct 2014 09:52:18 +0200
+
 mate-power-manager (1.8.0+dfsg1-4.1) unstable; urgency=medium
 
   * Non-maintainer upload.
