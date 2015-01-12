@@ -1,0 +1,68 @@
+From a7d224c53ce2555fc675d689b35d01728eaf7b4e Mon Sep 17 00:00:00 2001
+From: Nachanon Vetjasit <nachanon@users.noreply.github.com>
+Date: Wed, 7 Jan 2015 15:51:08 +0100
+Subject: [PATCH] Fix GTKBuilder script for media keys popup window
+
+---
+ data/acme.ui | 44 ++++++++++++++++++--------------------------
+ 1 file changed, 18 insertions(+), 26 deletions(-)
+
+diff --git a/data/acme.ui b/data/acme.ui
+index 3222ecb..e0457ed 100644
+--- a/data/acme.ui
++++ b/data/acme.ui
+@@ -4,36 +4,28 @@
+   <!-- interface-naming-policy toplevel-contextual -->
+   <object class="GtkWindow" id="dialog">
+     <child>
+-      <object class="GtkFrame" id="acme_frame">
++      <object class="GtkVBox" id="acme_box">
+         <property name="visible">True</property>
+-        <property name="label_xalign">0</property>
+-        <property name="shadow_type">out</property>
++        <property name="spacing">6</property>
+         <child>
+-          <object class="GtkVBox" id="acme_vbox">
++          <object class="GtkImage" id="acme_image">
+             <property name="visible">True</property>
+-            <property name="border_width">12</property>
+-            <property name="spacing">6</property>
+-            <child>
+-              <object class="GtkImage" id="acme_image">
+-                <property name="visible">True</property>
+-                <property name="icon_name">audio-volume-high</property>
+-                <property name="icon-size">6</property>
+-              </object>
+-              <packing>
+-                <property name="position">0</property>
+-              </packing>
+-            </child>
+-            <child>
+-              <object class="GtkProgressBar" id="acme_volume_progressbar">
+-                <property name="visible">True</property>
+-              </object>
+-              <packing>
+-                <property name="expand">False</property>
+-                <property name="fill">False</property>
+-                <property name="position">1</property>
+-              </packing>
+-            </child>
++            <property name="icon_name">audio-volume-high</property>
++            <property name="icon-size">6</property>
+           </object>
++          <packing>
++            <property name="position">0</property>
++          </packing>
++        </child>
++        <child>
++          <object class="GtkProgressBar" id="acme_volume_progressbar">
++            <property name="visible">True</property>
++          </object>
++          <packing>
++            <property name="expand">False</property>
++            <property name="fill">False</property>
++            <property name="position">1</property>
++          </packing>
+         </child>
+       </object>
+     </child>
