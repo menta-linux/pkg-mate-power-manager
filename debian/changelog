@@ -1,3 +1,13 @@
+mate-power-manager (1.8.1+dfsg1-4) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 0002_handle-UP-DEVICE-STATE-UNKNOWN.patch. Handle
+      UP_DEVICE_STATE_UNKNOWN device states, avoid g_assert_not_reached().
+      Fix segfaulting of mate-power-statistics in certain situations.
+      (Closes: #779719). See also #774546.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 05 Mar 2015 05:42:14 +0100
+
 mate-power-manager (1.8.1+dfsg1-3) unstable; urgency=medium
 
   * debian/patches:
