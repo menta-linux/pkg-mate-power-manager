@@ -1,3 +1,14 @@
+mate-power-manager (1.8.1+dfsg1-5) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 0003_fix-power-statistics-when-unplugging-wireless-device-with-
+      battery.patch. Fix crashes of mate-power-statistics when unplugging
+      wireless devices that have a battery (e.g. wireless mouse). The crashes
+      were due to a not fully implemented adaptation to API changes in upower
+      0.99 API. (Closes:  #780844).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 03 Apr 2015 16:02:50 +0200
+
 mate-power-manager (1.8.1+dfsg1-4) unstable; urgency=medium
 
   * debian/patches:
