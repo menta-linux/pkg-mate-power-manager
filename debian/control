@@ -51,7 +51,6 @@ Depends: ${shlibs:Depends},
          upower,
          mate-power-manager-common (= ${source:Version}),
          policykit-1,
-Recommends: udisks
 Suggests: mate-polkit,
 Description: power management tool for the MATE desktop
  MATE Power Manager is a session daemon for the MATE desktop
