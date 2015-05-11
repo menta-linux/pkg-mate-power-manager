@@ -1,3 +1,13 @@
+mate-power-manager (1.8.1+dfsg1-6) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 0004_drop-udisks1-support.patch. Drop HD spindown timeout support
+      via udisks1 because udisks1 is deprecated. (Closes: #750508).
+  * debian/control:
+    + Drop from R (bin:package mate-power-manager): udisks.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 11 May 2015 16:51:04 +0200
+
 mate-power-manager (1.8.1+dfsg1-5) unstable; urgency=medium
 
   * debian/patches:
