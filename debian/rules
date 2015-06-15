@@ -25,17 +25,11 @@ override_dh_auto_configure:
 	dh_auto_configure $(DHFLAGS) -- \
 		--disable-silent-rules \
 		--libexecdir=/usr/lib/mate-power-manager \
-		--disable-scrollkeeper \
 		--enable-applets \
 		--with-gtk=2.0
 
 override_dh_strip:
 	dh_strip --dbg-package=mate-power-manager-dbg
-
-override_dh_clean:
-	rm -f man/mate-power-manager-bugreport.sgml
-	rm -f man/mate-power-backlight-helper.sgml
-	dh_clean
 
 get-orig-source: $(PKG)_$(VER)$(DTYPE).orig.tar.xz $(info I: $(PKG)_$(VER)$(DTYPE))
 	@
