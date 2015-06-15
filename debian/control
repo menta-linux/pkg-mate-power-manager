@@ -9,7 +9,6 @@ Uploaders: Mike Gabriel <sunweaver@debian.org>,
            Petr Baudis <pasky@ucw.cz>,
 Build-Depends: debhelper (>= 9),
                autotools-dev,
-               libtool,
                libtool-bin,
                libdbus-glib-1-dev,
                libxml-parser-perl,
@@ -30,12 +29,10 @@ Build-Depends: debhelper (>= 9),
                libgnome-keyring-dev,
                pkg-config,
                libmate-panel-applet-dev,
-               libavahi-client-dev,
-               libavahi-common-dev,
-               libavahi-glib-dev,
+               libmate-desktop-dev (>= 1.9.0),
                mate-common,
                docbook-utils,
-               libgcrypt11-dev,
+               libgcrypt20-dev
 Standards-Version: 3.9.6
 Homepage: http://www.mate-desktop.org/
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-mate/mate-power-manager.git;a=summary
@@ -66,8 +63,8 @@ Description: power management tool for the MATE desktop
 Package: mate-power-manager-common
 Architecture: all
 Depends: ${misc:Depends}
-Breaks: mate-power-manager (<= 1.2.0-1)
-Replaces: mate-power-manager (<= 1.2.0-1)
+Breaks: mate-power-manager (<< 1.9.0)
+Replaces: mate-power-manager (<< 1.9.0)
 Description: power management tool for the MATE desktop (common files)
  MATE Power Manager is a session daemon for the MATE desktop
  that takes care of system or desktop events related to power, and
@@ -98,7 +95,8 @@ Description: power management tool for the MATE desktop (debugging symbols)
  power saving, and can trigger suspend-to-RAM, hibernate or shutdown
  events, all integrated to other components of the MATE desktop.
  .
- This package contains debugging symbols for mate-power-manager.
+ This package contains debugging symbols for mate-power-manager. It is
+ provided to help debugging problems.
  .
  The debugging symbols are installed in /usr/lib/debug and will
  automatically be used by gdb.
