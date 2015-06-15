@@ -1,4 +1,3 @@
-0001_fix-backlight-popup-gtkbuilder.patch
 0002_handle-UP-DEVICE-STATE-UNKNOWN.patch
 0003_fix-power-statistics-when-unplugging-wireless-device-with-battery.patch
 0004_drop-udisks1-support.patch
