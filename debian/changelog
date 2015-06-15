@@ -1,3 +1,22 @@
+mate-power-manager (1.10.0+dfsg1-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    + Move man pages to mate-power-manager-common.
+  * debian/patches:
+    + Drop 0001_fix-backlight-popup-gtkbuilder.patch. Applied upstream.
+    + Drop 0002_handle-UP-DEVICE-STATE-UNKNOWN.patch. Applied upstream.
+    + Drop 0003_fix-power-statistics-when-unplugging-wireless-device-with-battery.patch.
+    Applied upstream.
+    + Drop 0004_drop-udisks1-support.patch. Applied upstream.
+    + Drop 2002_compile-extra-man-pages.patch. Applied upstream.
+  * debian/mate-power-backlight-helper.sgml:
+    + Drop. Applied upstream.
+  * debian/mate-power-manager-bugreport.sgml:
+    + Drop. Applied upstream.
+
+ -- Martin Wimpress <code@flexion.org>  Sat, 13 Jun 2015 07:20:50 +0100
+
 mate-power-manager (1.8.1+dfsg1-6) unstable; urgency=medium
 
   * debian/patches:
