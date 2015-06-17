@@ -1,13 +1,15 @@
-mate-power-manager (1.10.0+dfsg1-1) UNRELEASED; urgency=medium
+mate-power-manager (1.10.0+dfsg1-1~exp1) experimental; urgency=medium
 
+  [ Martin Wimpress ]
   * New upstream release.
   * debian/control:
-    + Move man pages to mate-power-manager-common.
+    + New bin:package: mate-power-manager-common.
+    + Processed with wrap-and-sort
   * debian/patches:
     + Drop 0001_fix-backlight-popup-gtkbuilder.patch. Applied upstream.
     + Drop 0002_handle-UP-DEVICE-STATE-UNKNOWN.patch. Applied upstream.
-    + Drop 0003_fix-power-statistics-when-unplugging-wireless-device-with-battery.patch.
-    Applied upstream.
+    + Drop 0003_fix-power-statistics-when-unplugging-wireless-device-with-
+      battery.patch. Applied upstream.
     + Drop 0004_drop-udisks1-support.patch. Applied upstream.
     + Drop 2002_compile-extra-man-pages.patch. Applied upstream.
   * debian/mate-power-backlight-helper.sgml:
@@ -15,7 +17,17 @@ mate-power-manager (1.10.0+dfsg1-1) UNRELEASED; urgency=medium
   * debian/mate-power-manager-bugreport.sgml:
     + Drop. Applied upstream.
 
- -- Martin Wimpress <code@flexion.org>  Sat, 13 Jun 2015 07:20:50 +0100
+  [ Mike Gabriel ]
+  * debian/control:
+    + Versioned B-D: mate-common (>= 1.10).
+  * debian/rules:
+    + Create orig tarball in ../ rather than in $(CURDIR).
+    + No Debian-provided man pages anymore. Don't attempt copying them into
+      the source tree.
+  * debian/copyright:
+    + Update for this upstream release.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 17 Jun 2015 15:36:02 +0200
 
 mate-power-manager (1.8.1+dfsg1-6) unstable; urgency=medium
 
