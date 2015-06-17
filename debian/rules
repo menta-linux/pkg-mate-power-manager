@@ -19,7 +19,6 @@ override_dh_installchangelogs:
 	dh_installchangelogs NEWS
 
 override_dh_auto_configure:
-	cp -v debian/man/*.sgml man/
 	# ustream is without configure. autogen.sh will create it
 	NOCONFIGURE=1 ./autogen.sh
 	dh_auto_configure $(DHFLAGS) -- \
