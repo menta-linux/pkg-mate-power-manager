@@ -224,22 +224,21 @@ Comment:
  Using license from COPYING file.
 
 Files: help/*
-Copyright:
- Amanpreet Singh Alam <aalam@users.sf.net>
- Daniel Nylander <po@danielnylander.se>
- Gabor Kelemen <kelemeng@mate.hu>
- Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
- Joan Duran <jodufi@gmail.com>
- Jorge González <jorgegonz@svn.mate.org>
- Kaarina V. Sauna-aho <kaarina.v.sauna-aho@nomovok.com>
- Mario Blättermann <mariobl@gnome.org>
- Milo Casagrande <milo@ubuntu.com>
- Pavel Shylenok <uriel@tut.by>
- Philip Withnall <philip@tecnocode.co.uk>
- Robert-André Mauchin <zebob.m@pengzone.org>
- Simos Xenitellis <simos@gnome.org>
- Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>
- YunQiang Su <wzssyqa@gmail.com>
+Copyright: Amanpreet Singh Alam <aalam@users.sf.net>
+           Daniel Nylander <po@danielnylander.se>
+           Gabor Kelemen <kelemeng@mate.hu>
+           Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
+           Joan Duran <jodufi@gmail.com>
+           Jorge González <jorgegonz@svn.gnome.org>
+           Kaarina V. Sauna-aho <kaarina.v.sauna-aho@nomovok.com>
+           Mario Blättermann <mariobl@gnome.org>
+           Milo Casagrande <milo@ubuntu.com>
+           Pavel Shylenok <uriel@tut.by>
+           Philip Withnall <philip@tecnocode.co.uk>
+           Robert-André Mauchin <zebob.m@pengzone.org>
+           Simos Xenitellis <simos@gnome.org>
+           Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>
+           YunQiang Su <wzssyqa@gmail.com>
 License: GFDL-1.1+
 
 Files: debian/*
