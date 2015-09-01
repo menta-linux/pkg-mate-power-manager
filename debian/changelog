@@ -1,3 +1,9 @@
+mate-power-manager (1.10.2-1) UNRLEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Martin Wimpress <code@flexion.org>  Tue, 01 Sep 2015 12:17:10 +0200
+
 mate-power-manager (1.10.1+gfdl1-1) UNRELEASED; urgency=medium
 
   * debian/mate-power-manager-common.install:
