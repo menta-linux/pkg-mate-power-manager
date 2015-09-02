@@ -1,11 +1,7 @@
-mate-power-manager (1.10.2-1) UNRLEASED; urgency=medium
+mate-power-manager (1.10.2-1) unstable; urgency=medium
 
+  [ Martin Wimpress ]
   * New upstream release.
-
- -- Martin Wimpress <code@flexion.org>  Tue, 01 Sep 2015 12:17:10 +0200
-
-mate-power-manager (1.10.1+gfdl1-1) UNRELEASED; urgency=medium
-
   * debian/mate-power-manager-common.install:
     + Add usr/share/{help,man}.
   * debian/mate-power-manager.install:
@@ -21,9 +17,19 @@ mate-power-manager (1.10.1+gfdl1-1) UNRELEASED; urgency=medium
     + Remove patches/gpm-manager.patch, no longer upstream.
   * debian/patches:
     + Drop 2001_omit-gfdl-licensed-help-files.patch, the mate-power-manager
-    help is dfsg compliant.
+      help is DFSG compliant.
 
- -- Martin Wimpress <code@flexion.org>  Thu, 30 Jul 2015 10:29:38 +0100
+  [ Mike Gabriel ]
+  * Upload to unstable.
+    - This new upstream release fixes keyboard backlight adjustment for
+      laptops with non-standard levels. (This hopefully closes: #775500,
+      please reopen, if not).
+  * lintian:
+    + Move overrides in mate-power-manager.lintian-overrides over to
+      bin:package mate-power-manager-common (man page have been moved
+      over into the latter).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 02 Sep 2015 05:08:49 +0200
 
 mate-power-manager (1.10.1+dfsg1-1~exp1) experimental; urgency=medium
 
