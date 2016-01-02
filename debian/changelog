@@ -1,8 +1,20 @@
-mate-power-manager (1.12.1-1) UNRELEASED; urgency=medium
+mate-power-manager (1.12.1-1) unstable; urgency=medium
 
+  [ Martin Wimpress ]
   * New upstream release.
+    - Save AC-power backlight set via brightness keys in GSettings. (Closes:
+      #785017).
+    - LCD brightness changes on login while running on battery power. (Closes:
+      #766806).
+  * debian/control:
+    + Versioned B-D: mate-common (>= 1.12) and libmate-desktop-dev (>= 1.12).
 
- -- Martin Wimpress <code@flexion.org>  Mon, 09 Nov 2015 20:33:00 +0000
+  [ Mike Gabriel ]
+  * debian/patches:
+    + Add 0001_dont-crash-if-XRRGetScreenResourceCurrent-fails.patch (picked
+      from upstream). Don't crash if XRandR 1.3 is not supported.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 02 Jan 2016 07:48:36 +0100
 
 mate-power-manager (1.10.2-1) unstable; urgency=medium
 
