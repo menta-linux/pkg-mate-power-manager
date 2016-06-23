@@ -1,3 +1,16 @@
+mate-power-manager (1.14.0-2) unstable; urgency=medium
+
+  [ Vangelis Mouhtsis ]
+  * debian/{control,rules}:
+    + Don't build dbg:packages anymore. See
+      https://wiki.debian.org/AutomaticDebugPackages.
+
+  [ Martin Wimpress ]
+  * debian/patches:
+    + Add 1000_fix_battery_icon.patch.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 23 Jun 2016 21:25:52 +0200
+
 mate-power-manager (1.14.0-1) unstable; urgency=medium
 
   [ Vangelis Mouhtsis ]
