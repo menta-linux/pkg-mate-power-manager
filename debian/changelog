@@ -1,9 +1,3 @@
-mate-power-manager (1.14.0-2) UNRELEASED; urgency=medium
-
-  [ Martin Wimpress ] 
-
- -- Martin Wimpress <code@flexion.org>  Thu, 23 Jun 2016 11:06:13 +0100
-
 mate-power-manager (1.14.0-1) unstable; urgency=medium
 
   [ Vangelis Mouhtsis ]
