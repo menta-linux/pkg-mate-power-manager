@@ -1,6 +1,6 @@
 mate-power-manager (1.16.0-1) UNRELEASED; urgency=medium
 
-  * New upstream release.
+  * New upstream release. (Closes: #827232, #837965, #838214).
 
  -- Martin Wimpress <code@flexion.org>  Fri, 23 Sep 2016 10:46:47 +0100
 
