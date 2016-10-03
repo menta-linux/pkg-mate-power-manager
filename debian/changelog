@@ -1,10 +1,23 @@
-mate-power-manager (1.16.0-1) UNRELEASED; urgency=medium
+mate-power-manager (1.16.0-1) unstable; urgency=medium
 
-  * New upstream release. (Closes: #827232, #837965, #838214).
+  [ Martin Wimpress ]
+  * New upstream release. (Closes: #837965, #838214).
+  * debian/control:
+    + Drop B-D: libunique-3.0-dev. (Closes: #827232). Not required by
+      this upstream release anymore.
+    + Drop B-D: libmate-desktop-dev.
+  * debian/copyright:
+    + Update copyright attributions.
+
+  [ Vangelis Mouhtsis ]
+  * debian/changelog:
+    + Fix missing changelog items for 1.15.1-0ubuntu1 upload.
   * debian/control:
     + Dependencies updated for MATE 1.16.
+  * debian/watch:
+    + Update version matching again to _not_ support development releases.
 
- -- Martin Wimpress <code@flexion.org>  Fri, 23 Sep 2016 10:46:47 +0100
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 03 Oct 2016 20:40:50 +0200
 
 mate-power-manager (1.15.1-0ubuntu1) yakkety; urgency=medium
 
