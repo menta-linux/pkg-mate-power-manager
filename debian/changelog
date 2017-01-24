@@ -1,3 +1,11 @@
+mate-power-manager (1.16.0-2) unstable; urgency=medium
+
+  * debian/control:
+    + Replace R: dbus-x11 by R: default-dbus-session-bus | dbus-session-bus.
+      (Closes: #836032).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 24 Jan 2017 16:45:54 +0100
+
 mate-power-manager (1.16.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
