@@ -39,7 +39,7 @@ Vcs-Git: https://anonscm.debian.org/git/pkg-mate/mate-power-manager.git
 
 Package: mate-power-manager
 Architecture: any
-Depends: dbus-x11,
+Depends: default-dbus-session-bus | dbus-session-bus,
          mate-notification-daemon | notification-daemon,
          mate-power-manager-common (= ${source:Version}),
          policykit-1,
