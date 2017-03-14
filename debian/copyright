@@ -136,8 +136,7 @@ Files: .tx/config
        data/Makefile.am
        data/*.ui
        data/*.in
-       man/Makefile.am
-       man/*.sgml
+       data/*.1       
        po/LINGUAS
        po/POTFILES.*
        po/gnome-copyrights.txt
