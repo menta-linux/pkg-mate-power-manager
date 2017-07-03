@@ -11,7 +11,15 @@ mate-power-manager (1.18.0-1) UNRELEASED; urgency=medium
   [ Aron Xu ]
   * New upstream release
 
- -- Aron Xu <aron@debian.org>  Wed, 21 Jun 2017 21:01:50 +0800
+  [ Vangelis Mouhtsis ]
+  * debian/compat:
+    + Update compat version.
+  * debian/control:
+    + Bump debhelper version to (>= 10).
+  * debian/rules:
+    + Add new block for override_dh_missing.
+
+ -- Vangelis Mouhtsis <vangelis@gnugr.org>  Mon, 03 Jul 2017 09:52:30 +0300
 
 mate-power-manager (1.16.2-1) unstable; urgency=medium
 
