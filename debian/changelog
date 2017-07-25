@@ -20,6 +20,8 @@ mate-power-manager (1.18.0-1) UNRELEASED; urgency=medium
     + Add new block for override_dh_missing.
   * debian/control:
     + Bump Standards-Version: to 4.0.0. No changes needed.
+  * debian/rules:
+    + Disable autoreconf, handled by autogen.sh.
 
  -- Vangelis Mouhtsis <vangelis@gnugr.org>  Mon, 03 Jul 2017 09:52:30 +0300
 
