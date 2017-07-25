@@ -1,11 +1,11 @@
-mate-power-manager (1.18.0-1) UNRELEASED; urgency=medium
+mate-power-manager (1.18.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
   * debian/control: Dependencies updated for MATE 1.17.
   * debian/rules: Remove obsolete --with-gtk=3.0
   * debian/copyright: Update copyright attributions.
   * debian/control: Dependencies updated for MATE 1.18.
-  * debian/copyright: Update copyright attributions.
+  * debian/copyright: Update copyright attributions for 1.17.x.
   * debian/rules: Remove obsolete --disable-strict.
 
   [ Aron Xu ]
@@ -23,7 +23,11 @@ mate-power-manager (1.18.0-1) UNRELEASED; urgency=medium
   * debian/rules:
     + Disable autoreconf, handled by autogen.sh.
 
- -- Vangelis Mouhtsis <vangelis@gnugr.org>  Mon, 03 Jul 2017 09:52:30 +0300
+  [ Mike Gabriel ]
+  * debian/copyright:
+    + Update copyright attributions for 1.18.0.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 25 Jul 2017 13:53:30 +0200
 
 mate-power-manager (1.16.2-1) unstable; urgency=medium
 
