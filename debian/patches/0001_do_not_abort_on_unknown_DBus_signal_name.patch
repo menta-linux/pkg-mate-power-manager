@@ -1,0 +1,16 @@
+Author: Vlad Orlov <monsta@inbox.ru>
+Description: Don't abort on unknown DBus signal name, it's external data, so it's not clever to have an assert on it
+
+diff --git a/src/gpm-kbd-backlight.c b/src/gpm-kbd-backlight.c
+index ae8e0fa..c646855 100644
+--- a/src/gpm-kbd-backlight.c
++++ b/src/gpm-kbd-backlight.c
+@@ -326,7 +326,7 @@ gpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
+        return;
+    }
+ 
+-   g_assert_not_reached ();
++   g_debug ("signal '%s' not handled!", signal_name);
+ }
+ 
+ /**
