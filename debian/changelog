@@ -1,9 +1,11 @@
-mate-power-manager (1.18.0-2) UNRELEASED; urgency=medium
+mate-power-manager (1.18.0-2) unstable; urgency=medium
 
-  * debian/patches: Add
-    0001_do_not_abort_on_unknown_DBus_signal_name.patch. (LP: #1707300)
+  [ Martin Wimpress ]
+  * debian/patches:
+    + Add 0001_do_not_abort_on_unknown_DBus_signal_name.patch.
+      (LP: #1707300). (Closes: #870121).
 
- -- Martin Wimpress <martin.wimpress@ubuntu.com>  Thu, 17 Aug 2017 00:24:15 +0100
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 23 Aug 2017 16:13:18 +0200
 
 mate-power-manager (1.18.0-1) unstable; urgency=medium
 
