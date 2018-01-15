@@ -1,3 +1,22 @@
+mate-power-manager (1.18.1-2) unstable; urgency=medium
+
+  [ Vangelis Mouhtsis ]
+  * debian/control:
+    + Bump Standards-Version: to 4.1.3. No changes needed.
+    + Rename pretty name of our team -> Debian+Ubuntu MATE Packaging Team.
+    + Update Maintainer: field to debian-mate ML on lists.debian.org.
+    + Temporarily have pkg-mate-team ML under Uploaders:.
+
+  [ Mike Gabriel ]
+  * debian/rules:
+    + Build with --without-keyring configure option until m-p-m has been ported
+      to libsecret or the keyring integration has been removed entirely by
+      upstream.
+  * debian/control:
+    + Drop B-D on deprecated libgnome-keyring-dev. (Closes: #867937).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 15 Jan 2018 12:11:45 +0100
+
 mate-power-manager (1.18.1-1) unstable; urgency=medium
 
   * New upstream release.
