@@ -25,6 +25,7 @@ override_dh_auto_configure:
 		--disable-silent-rules \
 		--libexecdir=/usr/lib/mate-power-manager \
 		--enable-applets \
+		--without-keyring \
 		--enable-deprecated
 
 override_dh_strip:
