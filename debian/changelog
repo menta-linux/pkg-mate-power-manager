@@ -1,3 +1,16 @@
+mate-power-manager (1.20.0-1) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/copyright (already in 1.19.1-0ubuntu1):
+    + Update copyright attributions.
+  * debian/control (already in 1.20.0-0ubuntu1):
+    +  Drop obsolete B-D libwnck-3-dev.
+  * debian/patches:
+    + Add 0001_scale_osd_on_hidpi_displays.patch. Scale OSD size correctly on
+      HiDPI displays.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 13 Feb 2018 19:47:52 +0100
+
 mate-power-manager (1.20.0-0ubuntu1) bionic; urgency=medium
 
   * New upstream release.
