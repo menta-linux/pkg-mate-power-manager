@@ -1,3 +1,22 @@
+mate-power-manager (1.20.2-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Inhibit Applet: Fix excessive CPU use. (Closes: #890603).
+    - ... (see upstream changelog file).
+  * debian/control:
+    + Update Vcs-*: fields. Package has been migrated to salsa.debian.org.
+    + Bump Standards-Version: to 4.1.4. No changes needed.
+    + Drop pkg-mate-team Alioth mailing list from Uploaders: field.
+  * debian/copyright:
+    + Make Upstream-Name: field's value more human readable.
+    + Update Upstream-Contact: field.
+    + Update Source: field. Use secure URLs.
+  * debian/upstream/metadata:
+    + Add file. Be compliant with DEP-12 proposal.
+    + Use Martin's address as Contact: address.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 05 Jul 2018 18:49:16 +0200
+
 mate-power-manager (1.20.1-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
