@@ -1,3 +1,11 @@
+mate-power-manager (1.20.2-2) unstable; urgency=medium
+
+  * debian/control:
+    + Update D (mate-power-manager). Allow elogind as an alternative to systemd
+      (or consolekit). (Closes: #915232).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 02 Dec 2018 00:30:06 +0100
+
 mate-power-manager (1.20.2-1) unstable; urgency=medium
 
   * New upstream release.
