@@ -1,3 +1,17 @@
+mate-power-manager (1.20.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    + Bump Standards-Version: to 4.3.0. No changes needed.
+    + White-space clean-up at EOF.
+    + Replace B-D on libtool-bin by libtool. (Closes: #912842).
+  * debian/patches:
+    + Drop Ubuntu-specific patch 2000_disable_notification_prefs_ui.patch.
+      (Closes: #915926).
+    + Add 2001_libtool-bin.patch (as part of the fix for #912842).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 09 Jan 2019 10:39:56 +0100
+
 mate-power-manager (1.20.2-2) unstable; urgency=medium
 
   * debian/control:
