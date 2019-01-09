@@ -71,4 +71,3 @@ Description: power management tool for the MATE desktop (common files)
  events, all integrated to other components of the MATE desktop.
  .
  This package contains the architecture independent files.
-
