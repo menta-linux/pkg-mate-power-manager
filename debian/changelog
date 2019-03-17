@@ -1,3 +1,11 @@
+mate-power-manager (1.20.3-2) unstable; urgency=medium
+
+  * debian/control:
+    + Drop from B-D: libxml-parser-perl. This makes mate-power-manager
+      cross-buildable. Thanks to Helmut Grohne. (Closes: #923658).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 17 Mar 2019 22:53:04 +0100
+
 mate-power-manager (1.20.3-1) unstable; urgency=medium
 
   * New upstream release.
