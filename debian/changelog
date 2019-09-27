@@ -1,3 +1,12 @@
+mate-power-manager (1.22.1-2) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/patches:
+    + Add 0001_fix_upower_deprecations.patch. Switch from deprecated upower-glib
+      get_devices() to get_devices2(). (LP: #1845472)
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 27 Sep 2019 18:48:31 +0200
+
 mate-power-manager (1.22.1-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
