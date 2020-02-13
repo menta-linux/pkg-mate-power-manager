@@ -25,6 +25,7 @@ Build-Depends: autoconf-archive,
                libxrandr-dev,
                mate-common (>= 1.18),
                pkg-config,
+               policykit-1,
                xmlto,
                yelp-tools,
 Standards-Version: 4.5.0
