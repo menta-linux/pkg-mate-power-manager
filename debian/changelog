@@ -1,4 +1,4 @@
-mate-power-manager (1.24.0-1) UNRELEASED; urgency=medium
+mate-power-manager (1.24.0-1) unstable; urgency=medium
 
   [ Mike Gabriel ]
   * debian/control:
@@ -10,8 +10,15 @@ mate-power-manager (1.24.0-1) UNRELEASED; urgency=medium
 
   [ Martin Wimpress ]
   * New upstream release.
+  * debian/patches:
+    + Drop 0001_fix_upower_deprecations.patch. Applied upstream.
+  * debian/copyright:
+    + Update copyright attributions.
+  * debian/control:
+    + Add B-D libxml2-utils.
+    + Add B-D policykit-1.
 
- -- Martin Wimpress <martin.wimpress@ubuntu.com>  Wed, 12 Feb 2020 23:43:24 +0000
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 14 Feb 2020 10:41:40 +0100
 
 mate-power-manager (1.22.2-1) unstable; urgency=medium
 
