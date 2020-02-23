@@ -1,3 +1,11 @@
+mate-power-manager (1.24.0-2) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 1001_fix-only-showin.patch. Drop empty Categories= field.
+      (Closes: #951802).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 23 Feb 2020 20:54:31 +0100
+
 mate-power-manager (1.24.0-1) unstable; urgency=medium
 
   [ Mike Gabriel ]
