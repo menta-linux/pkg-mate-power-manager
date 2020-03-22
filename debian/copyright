@@ -98,6 +98,8 @@ Files: .travis.yml
        data/icons/*/status/*.png
        data/icons/*/status/*.svg
        data/icons/Makefile.am
+       data/mate-power-manager.about
+       data/org.mate.power-manager.manager.gresource.xml
        data/org.mate.power-manager.preferences.gresource.xml
        data/org.mate.power-manager.statistics.gresource.xml
        data/Makefile.am
@@ -121,6 +123,7 @@ Files: .travis.yml
        README
        autogen.sh
        configure.ac
+       update-authors.pl
 Copyright: *No copyright*
 License: GPL-2+
 Comment:
