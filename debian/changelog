@@ -1,3 +1,9 @@
+mate-power-manager (1.24.2-0ubuntu1~groovy1.0) groovy; urgency=medium
+
+  * New upstream release
+
+ -- Martin Wimpress <martin.wimpress@ubuntu.com>  Mon, 17 Aug 2020 12:37:38 +0100
+
 mate-power-manager (1.24.1-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
