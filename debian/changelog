@@ -1,8 +1,15 @@
-mate-power-manager (1.24.2-0ubuntu1~groovy1.0) groovy; urgency=medium
+mate-power-manager (1.24.2-1) unstable; urgency=medium
 
-  * New upstream release
+  [ Martin Wimpress ]
+  * New upstream release.
 
- -- Martin Wimpress <martin.wimpress@ubuntu.com>  Mon, 17 Aug 2020 12:37:38 +0100
+  [ Mike Gabriel ]
+  * debian/control:
+    + Bump DH compat level to version 13.
+  * debian/copyright:
+    + Update copyright attributions.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 17 Aug 2020 12:37:38 +0100
 
 mate-power-manager (1.24.1-1) unstable; urgency=medium
 
