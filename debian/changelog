@@ -1,3 +1,9 @@
+mate-power-manager (1.24.3-1) UNRELEASED; urgency=medium
+
+  * New upstream maintenance release.
+
+ -- Martin Wimpress <martin.wimpress@ubuntu.com>  Sat, 27 Mar 2021 10:55:07 +0000
+
 mate-power-manager (1.24.2-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
