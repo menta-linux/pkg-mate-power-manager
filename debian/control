@@ -27,7 +27,7 @@ Build-Depends: debhelper-compat (= 13),
                policykit-1,
                xmlto,
                yelp-tools,
-Standards-Version: 4.5.0
+Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: http://www.mate-desktop.org/
 Vcs-Browser: https://salsa.debian.org/debian-mate-team/mate-power-manager
