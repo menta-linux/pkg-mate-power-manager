@@ -26,9 +26,7 @@ override_dh_installchangelogs:
 override_dh_auto_configure:
 	# Ubuntu MATE enables indicators by default which include indicator-power
 	# so patch disable some UI in mate-power-manager that is irrelevant
-ifeq ($(shell dpkg-vendor --is Ubuntu && echo yes),yes)
-	patch data/gpm-prefs.ui < debian/patches/2000_disable_notification_prefs_ui.patch
-endif
+
 	# upstream is without configure. autogen.sh will create it
 	NOCONFIGURE=1 ./autogen.sh
 	dh_auto_configure $(DHFLAGS) -- \
