@@ -1,9 +1,23 @@
-mate-power-manager (1.26.0-1) UNRELEASED; urgency=medium
+mate-power-manager (1.26.0-1) unstable; urgency=medium
 
-  * New upstream maintenance release.
+  [ Martin Wimpress ]
   * New upstream release.
+  * debian/control:
+    + Dependencies updated for MATE 1.26.
+  * debian/rules:
+    + Do not patch notification UI. Applied upstream.
 
- -- Martin Wimpress <code@wimpress.io>  Sat, 21 Aug 2021 18:02:16 +0100
+  [ Mike Gabriel ]
+  * debian/control:
+    + Bump Standards-Version: to 4.6.0. No changes needed.
+  * debian/watch:
+    + Use format version 4.
+  * debian/copyright:
+    + Update copyright attributions.
+  * debian/mate-power-manager-common.lintian-overrides:
+    + Drop file. Overrides in it not needed anymore.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 12 Dec 2021 00:02:45 +0100
 
 mate-power-manager (1.24.2-1) unstable; urgency=medium
 
