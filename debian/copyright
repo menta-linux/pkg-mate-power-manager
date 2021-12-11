@@ -3,12 +3,8 @@ Upstream-Name: MATE Power Manager
 Upstream-Contact: Martin Wimpress <martin@mate-desktop.org>
 Source: https://git.mate-desktop.org/mate-power-manager/
 
-Files: applets/brightness/egg-debug.c
-       applets/brightness/egg-debug.h
-       applets/brightness/gpm-common.c
+Files: applets/brightness/gpm-common.c
        applets/brightness/gpm-common.h
-       applets/inhibit/egg-debug.c
-       applets/inhibit/egg-debug.h
        applets/inhibit/gpm-common.c
        applets/inhibit/gpm-common.h
        src/egg-array-float.c
@@ -17,8 +13,6 @@ Files: applets/brightness/egg-debug.c
        src/egg-color.h
        src/egg-console-kit.c
        src/egg-console-kit.h
-       src/egg-debug.c
-       src/egg-debug.h
        src/egg-discrete.c
        src/egg-discrete.h
        src/egg-idletime.c
@@ -56,7 +50,18 @@ Files: applets/brightness/egg-debug.c
        src/gpm-statistics.c
        src/gpm-upower.c
        src/gpm-upower.h
-Copyright: 2005-2010, Richard Hughes <richard@hughsie.com>
+Copyright: 2005-2007, Richard Hughes <richard@hughsie.com>
+           2005-2008, Richard Hughes <richard@hughsie.com>
+           2006-2007, Richard Hughes <richard@hughsie.com>
+           2006-2008, Richard Hughes <richard@hughsie.com>
+           2007, Richard Hughes <richard@hughsie.com>
+           2007-2008, Richard Hughes <richard@hughsie.com>
+           2007-2009, Richard Hughes <richard@hughsie.com>
+           2008, Richard Hughes <richard@hughsie.com>
+           2008-2009, Richard Hughes <richard@hughsie.com>
+           2008-2010, Richard Hughes <richard@hughsie.com>
+           2010, Richard Hughes <richard@hughsie.com>
+           2012-2021, MATE Developers
 License: GPL-2+
 
 Files: src/gpm-backlight.c
@@ -71,14 +76,65 @@ Files: src/gpm-backlight.c
        src/gpm-tray-icon.c
        src/gpm-tray-icon.h
 Copyright: 2004-2005, William Jon McCann <mccann@jhu.edu>
+          2005, William Jon McCann <mccann@jhu.edu>
+          2005-2007, Richard Hughes <richard@hughsie.com>
+          2005-2008, Richard Hughes <richard@hughsie.com>
+          2005-2009, Richard Hughes <richard@hughsie.com>
+          2006-2009, Richard Hughes <richard@hughsie.com>
+          2012-2021, MATE Developers
+License: GPL-2+
+
+Files: src/gpm-kbd-backlight.c
+       src/gpm-kbd-backlight.h
+Copyright: 2010, Alex Launi <alex launi canonical com>
+           2012-2021, MATE Developers
+License: GPL-2+
+
+Files: applets/brightness/brightness-applet.c
+       applets/inhibit/inhibit-applet.c
+Copyright: 2006, Benjamin Canou <bookeldor@gmail.com>
+           2006-2009, Richard Hughes <richard@hughsie.com>
+           2007, Richard Hughes <richard@hughsie.com>
+           2012-2021, MATE Developers
+License: GPL-2+
+
+Files: src/gpm-prefs-core.c
+       src/gpm-prefs.c
+Copyright: 2005, Jaap Haitsma <jaap@haitsma.org>
+           2005, William Jon McCann <mccann@jhu.edu>
+           2005-2008, Richard Hughes <richard@hughsie.com>
            2005-2009, Richard Hughes <richard@hughsie.com>
+           2012-2021, MATE Developers
 License: GPL-2+
 
 Files: src/msd-osd-window.c
        src/msd-osd-window.h
-Copyright:  2006, William Jon McCann <mccann@jhu.edu>
-            2009, Novell, Inc
+Copyright: 2006, William Jon McCann <mccann@jhu.edu>
+           2006-2007, William Jon McCann <mccann@jhu.edu>
+           2009, Novell, Inc
+           2012-2021, MATE Developers
 License: LGPL-2+
+
+Files: src/gsd-media-keys-window.c
+       src/gsd-media-keys-window.h
+Copyright: 2006, William Jon McCann <mccann@jhu.edu>
+           2006-2007, William Jon McCann <mccann@jhu.edu>
+           2012-2021, MATE Developers
+License: LGPL-2+
+
+Files: src/gpm-main.c
+Copyright: 2003, David Zeuthen, <david@fubar.dk>
+           2004, Benjamin Kahn, <xkahn@zoned.net>
+           2005-2007, Richard Hughes <richard@hughsie.com>
+           2012-2021, MATE Developers
+License: GPL-2+
+
+Files: src/gpm-icon-names.h
+Copyright: 2002, Jorn Baayen
+           2003-2004, Colin Walters <walters@verbum.org>
+           2005-2007, Richard Hughes <richard@hughsie.com>
+           2012-2021, MATE Developers
+License: GPL-2+
 
 Files: .build.yml
        .travis.yml
@@ -130,41 +186,6 @@ License: GPL-2+
 Comment:
  Using license from COPYING file.
 
-Files: src/gpm-kbd-backlight.c
-       src/gpm-kbd-backlight.h
-Copyright: 2010, Alex Launi <alex launi canonical com>
-License: GPL-2+
-
-Files: applets/brightness/brightness-applet.c
-       applets/inhibit/inhibit-applet.c
-Copyright: 2006, Benjamin Canou <bookeldor@gmail.com>
-           2006-2009, Richard Hughes <richard@hughsie.com>
-License: GPL-2+
-
-Files: src/gpm-prefs-core.c
-       src/gpm-prefs.c
-Copyright: 2005, Jaap Haitsma <jaap@haitsma.org>
-           2005, William Jon McCann <mccann@jhu.edu>
-           2005-2009, Richard Hughes <richard@hughsie.com>
-License: GPL-2+
-
-Files: src/gsd-media-keys-window.c
-       src/gsd-media-keys-window.h
-Copyright: 2006-2007, William Jon McCann <mccann@jhu.edu>
-License: GPL-2+
-
-Files: src/gpm-main.c
-Copyright: 2003, David Zeuthen, <david@fubar.dk>
-           2004, Benjamin Kahn, <xkahn@zoned.net>
-           2005-2007, Richard Hughes <richard@hughsie.com>
-License: GPL-2+
-
-Files: src/gpm-icon-names.h
-Copyright: 2002, Jorn Baayen
-           2003-2004, Colin Walters <walters@verbum.org>
-           2005-2007, Richard Hughes <richard@hughsie.com>
-License: GPL-2+
-
 Files: mate-power-manager.pot
        po/*.po
 Copyright: 2005-2010, Free Software Foundation, Inc.
@@ -198,6 +219,11 @@ Copyright: Amanpreet Singh Alam <aalam@users.sf.net>
            Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>
            YunQiang Su <wzssyqa@gmail.com>
 License: GFDL-1.1+
+
+Files: git.mk
+Copyright: 2009, Red Hat, Inc.
+           2010,2011,2012,2013, Behdad Esfahbod
+License: public-domain
 
 Files: debian/*
 Copyright: 2011-2014, Stefano Karapetsas <stefano@karapetsas.com>
@@ -248,3 +274,8 @@ License: GFDL-1.1+
  .
  On Debian systems, the complete text of the GNU Free Documentation License
  version 1.2 can be found in "/usr/share/common-licenses/GFDL-1.2".
+
+License: public-domain
+ Copying and distribution of this file, with or without modification,
+ is permitted in any medium without royalty provided the copyright
+ notice and this notice are preserved.
