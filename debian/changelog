@@ -1,3 +1,11 @@
+mate-power-manager (1.26.0-2) unstable; urgency=medium
+
+  [ Martin Wimpress ]
+  * debian/patches:
+    + Add 0001_add-gaming-input-devices.patch. (LP: #1967854).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 06 Apr 2022 22:43:14 +0200
+
 mate-power-manager (1.26.0-1) unstable; urgency=medium
 
   [ Martin Wimpress ]
