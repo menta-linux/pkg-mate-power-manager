@@ -1,8 +1,22 @@
-mate-power-manager (1.26.1-1) UNRELEASED; urgency=medium
+mate-power-manager (1.26.1-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream release. (Closes: #1038444).
+    - gpm-prefs: fix memory leak.
+    - gpm-statistics: fix memory leak.
+  * debian/control:
+    + Bump Standards-Version: to 4.6.2. No changes needed.
+    + In B-D, switch from transitional pkg policykit-1 to combination of
+      polkitd and libpolkit-gobject-1-dev. (Closes: #1025599).
+    + In D, replace transitional policykit-1 by polkitd and pkexec (also
+      addresses #1025599).
+  * debian/rules:
+    + Set libexecdir to /usr/libexec/mate-power-manager.
+  * debian/mate-power-manager.install:
+    + Adjust to changed libexecdir.
+  * debian/copyright:
+    + Update copyright attribution for debian/ folder.
 
- -- Mike Gabriel <sunweaver@debian.org>  Sun, 18 Jun 2023 09:22:33 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 18 Jun 2023 09:23:22 +0200
 
 mate-power-manager (1.26.0-2) unstable; urgency=medium
 
