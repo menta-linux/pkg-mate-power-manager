@@ -31,7 +31,7 @@ override_dh_auto_configure:
 	NOCONFIGURE=1 ./autogen.sh
 	dh_auto_configure $(DHFLAGS) -- \
 		--disable-silent-rules \
-		--libexecdir=/usr/lib/mate-power-manager \
+		--libexecdir=/usr/libexec/mate-power-manager \
 		--enable-applets \
 		--without-keyring \
 		--enable-deprecated
