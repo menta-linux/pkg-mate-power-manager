@@ -1,3 +1,17 @@
+mate-power-manager (1.26.1-1.1) unstable; urgency=medium
+
+  [ Faidon Liambotis ]
+  * Non-maintainer upload, with permission.
+  * Fix a typo in hu.po to address a FTBFS with gettext 0.22.
+    (Closes: #1074753)
+  * Depend on pkgconf instead of the transitional pkg-config.
+
+  [ Mike Gabriel ]
+  * debian/control: Drop from B-D: libgcrypt20-dev. Not used.
+    (Closes: #1071938).
+
+ -- Faidon Liambotis <paravoid@debian.org>  Thu, 05 Sep 2024 16:33:43 +0300
+
 mate-power-manager (1.26.1-1) unstable; urgency=medium
 
   * New upstream release. (Closes: #1038444).
