@@ -1,6 +1,6 @@
 etc/xdg/
 usr/bin/
-usr/libexec/
+usr/lib/*/mate-power-manager/*.so
 usr/sbin/mate-power-backlight-helper
 usr/share/applications/
 usr/share/dbus-1/

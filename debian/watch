@@ -1,3 +1,4 @@
 version=4
-https://git.mate-desktop.org/mate-power-manager/ \
-    snapshot/mate-power-manager-(\d\.(?:[0-9]+|)[24680]\.\d)\.tar\.xz
+opts="searchmode=plain" \
+https://api.github.com/repos/mate-desktop/mate-power-manager/releases?per_page=100 \
+    https://github.com/mate-desktop/mate-power-manager/releases/download/v(\d\S*)/mate-power-manager-(\d\S*)\.tar\.xz

@@ -1,3 +1,15 @@
+mate-power-manager (1.28.1-1menta1) unstable; urgency=medium
+
+  * Menta Linux rebuild: new upstream release 1.28.1.
+  * Drop 0001/0002 (applied upstream).
+  * Add 0001_in-process-applets.patch: build Brightness and Inhibit
+    applets in-process, descriptors declare Wayland.
+  * debian/rules, debian/mate-power-manager.install: install applet
+    modules, drop .la files.
+  * debian/watch: Track GitHub releases.
+
+ -- Menta Linux <packages@menta-linux.invalid>  Sat, 14 Nov 2026 17:14:21 -0700
+
 mate-power-manager (1.26.1-1.1) unstable; urgency=medium
 
   [ Faidon Liambotis ]

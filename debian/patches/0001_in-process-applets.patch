@@ -1,0 +1,188 @@
+Description: Build the Brightness and Inhibit panel applets in-process
+ Build each applet as a loadable module (libmate-*-applet.so) using
+ MATE_PANEL_APPLET_IN_PROCESS_FACTORY instead of a separate D-Bus
+ activated executable, and mark the applet descriptors InProcess=true with
+ the module Location. Also declare Wayland as a supported platform so
+ mate-panel offers the applets on Wayland. The out-of-process D-Bus
+ .service files are no longer installed.
+Author: Menta Linux <packages@menta-linux.invalid>
+Forwarded: not-needed
+Last-Update: 2026-11-14
+---
+
+--- a/applets/brightness/brightness-applet.c	2024-02-25 13:17:59.000000000 -0800
++++ b/applets/brightness/brightness-applet.c	2026-11-14 17:13:58.702302652 -0700
+@@ -1105,7 +1105,7 @@
+ /**
+  * this generates a main with a applet factory
+  **/
+-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY
++MATE_PANEL_APPLET_IN_PROCESS_FACTORY
+  (/* the factory iid */
+  GPM_BRIGHTNESS_APPLET_FACTORY_ID,
+  /* generates brighness applets instead of regular mate applets  */
+
+--- a/applets/brightness/Makefile.am	2024-02-25 13:17:59.000000000 -0800
++++ b/applets/brightness/Makefile.am	2026-11-14 17:14:11.150248691 -0700
+@@ -24,18 +24,20 @@
+ 	$(WARN_CFLAGS)						\
+ 	$(NULL)
+ 
+-libexec_PROGRAMS=mate-brightness-applet
++pkglib_LTLIBRARIES = libmate-brightness-applet.la
+ 
+-mate_brightness_applet_SOURCES =				\
++libmate_brightness_applet_la_SOURCES =				\
+ 	brightness-applet.c					\
+ 	gpm-common.c						\
+ 	gpm-common.h
+ 
+-mate_brightness_applet_LDADD =					\
++libmate_brightness_applet_la_LIBADD =					\
+ 	$(DBUS_LIBS)						\
+ 	$(CAIRO_LIBS)						\
+ 	$(PANEL_LIBS)
+ 
++libmate_brightness_applet_la_LDFLAGS = -module -avoid-version
++
+ appletdir       = $(datadir)/mate-panel/applets
+ applet_in_files = org.mate.BrightnessApplet.mate-panel-applet.desktop.in
+ applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
+@@ -45,18 +47,11 @@
+ 
+ $(applet_in_files): $(applet_in_files).in
+ 	$(AM_V_GEN) sed \
+-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
++            -e "s|\@LOCATION\@|$(pkglibdir)/libmate-brightness-applet.so|" \
+             -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
+             $< > $@
+ 
+-servicedir       = $(datadir)/dbus-1/services
+ service_in_files = org.mate.panel.applet.BrightnessAppletFactory.service.in
+-service_DATA     = $(service_in_files:.service.in=.service)
+-
+-org.mate.panel.applet.BrightnessAppletFactory.service: $(service_in_files)
+-	$(AM_V_GEN)sed \
+-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
+-            $< > $@
+ 
+ uidir   = $(datadir)/mate-power-manager/ui
+ ui_DATA = brightness-applet-menu.xml
+@@ -64,6 +59,6 @@
+ EXTRA_DIST = $(applet_in_files).in $(ui_DATA) $(service_in_files)
+ 
+ DISTCLEANFILES =						\
+-	$(applet_DATA) $(applet_DATA).in $(service_DATA)
++	$(applet_DATA) $(applet_DATA).in
+ 
+ -include $(top_srcdir)/git.mk
+
+--- a/applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in	2024-02-25 13:17:59.000000000 -0800
++++ b/applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in	2026-11-14 17:13:58.702399572 -0700
+@@ -1,6 +1,7 @@
+ [Applet Factory]
+ Id=BrightnessAppletFactory
+-Location=@LIBEXECDIR@/mate-brightness-applet
++InProcess=true
++Location=@LOCATION@
+ Name=Brightness Applet Factory
+ Description=Factory for Brightness Applet
+ 
+@@ -10,7 +11,7 @@
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+ Icon=mate-brightness-applet
+ MateComponentId=OAFIID:MATE_BrightnessApplet
+-Platforms=X11;
++Platforms=X11;Wayland;
+ X-MATE-Bugzilla-Bugzilla=MATE
+ X-MATE-Bugzilla-Product=mate-power-manager
+ X-MATE-Bugzilla-Component=applets
+
+--- a/applets/inhibit/inhibit-applet.c	2024-02-25 13:17:59.000000000 -0800
++++ b/applets/inhibit/inhibit-applet.c	2026-11-14 17:13:58.702799529 -0700
+@@ -528,7 +528,7 @@
+ /**
+  * this generates a main with a applet factory
+  **/
+-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY
++MATE_PANEL_APPLET_IN_PROCESS_FACTORY
+  (/* the factory iid */
+  GPM_INHIBIT_APPLET_FACTORY_ID,
+  /* generates brighness applets instead of regular mate applets  */
+
+--- a/applets/inhibit/Makefile.am	2024-02-25 13:17:59.000000000 -0800
++++ b/applets/inhibit/Makefile.am	2026-11-14 17:14:11.150332267 -0700
+@@ -24,45 +24,40 @@
+ 	$(WARN_CFLAGS)						\
+ 	$(NULL)
+ 
+-libexec_PROGRAMS=mate-inhibit-applet
++pkglib_LTLIBRARIES = libmate-inhibit-applet.la
+ 
+-mate_inhibit_applet_SOURCES =					\
++libmate_inhibit_applet_la_SOURCES =					\
+ 	inhibit-applet.c					\
+ 	gpm-common.c						\
+ 	gpm-common.h
+ 
+-mate_inhibit_applet_LDADD =					\
++libmate_inhibit_applet_la_LIBADD =					\
+ 	$(DBUS_LIBS)						\
+ 	$(CAIRO_LIBS)						\
+ 	$(PANEL_LIBS)
+ 
++libmate_inhibit_applet_la_LDFLAGS = -module -avoid-version
++
+ appletdir       = $(datadir)/mate-panel/applets
+ applet_in_files = org.mate.InhibitApplet.mate-panel-applet.desktop.in
+ applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
+ 
+ $(applet_in_files): $(applet_in_files).in
+ 	$(AM_V_GEN) sed \
+-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
++            -e "s|\@LOCATION\@|$(pkglibdir)/libmate-inhibit-applet.so|" \
+             -e "s|\@VERSION\@|$(PACKAGE_VERSION)|" \
+             $< > $@
+ 
+ $(applet_DATA): $(applet_in_files)
+ 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
+ 
+-servicedir       = $(datadir)/dbus-1/services
+ service_in_files = org.mate.panel.applet.InhibitAppletFactory.service.in
+-service_DATA     = $(service_in_files:.service.in=.service)
+-
+-org.mate.panel.applet.InhibitAppletFactory.service: $(service_in_files)
+-	$(AM_V_GEN)sed \
+-            -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
+-            $< > $@
+ 
+ uidir   = $(datadir)/mate-power-manager/ui
+ ui_DATA = inhibit-applet-menu.xml
+ 
+ EXTRA_DIST = $(applet_in_files).in $(ui_DATA) $(service_in_files)
+ 
+-DISTCLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA)
++DISTCLEANFILES = $(applet_DATA) $(applet_DATA).in
+ 
+ -include $(top_srcdir)/git.mk
+
+--- a/applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in	2024-02-25 13:17:59.000000000 -0800
++++ b/applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in	2026-11-14 17:13:58.702859581 -0700
+@@ -1,6 +1,7 @@
+ [Applet Factory]
+ Id=InhibitAppletFactory
+-Location=@LIBEXECDIR@/mate-inhibit-applet
++InProcess=true
++Location=@LOCATION@
+ Name=Inhibit Applet Factory
+ Description=Factory for Inhibit Applet
+ 
+@@ -10,7 +11,7 @@
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+ Icon=mate-inhibit-applet
+ MateComponentId=OAFIID:MATE_InhibitApplet
+-Platforms=X11;
++Platforms=X11;Wayland;
+ X-MATE-Bugzilla-Bugzilla=MATE
+ X-MATE-Bugzilla-Product=mate-power-manager
+ X-MATE-Bugzilla-Component=applets
