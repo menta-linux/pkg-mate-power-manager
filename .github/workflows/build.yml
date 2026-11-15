@@ -17,7 +17,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y --no-install-recommends \
-            ca-certificates curl git devscripts equivs build-essential fakeroot
+            ca-certificates curl git quilt devscripts equivs build-essential fakeroot
 
       - uses: actions/checkout@v4
 
@@ -30,6 +30,12 @@ jobs:
           tar -C ../build -xf "../build/mate-power-manager_${UPSTREAM}.orig.tar.xz"
           cp -a debian "../build/mate-power-manager-${UPSTREAM}/"
           echo "SRCDIR=$(realpath ../build/mate-power-manager-${UPSTREAM})" >> "$GITHUB_ENV"
+
+      - name: Apply quilt patches
+        working-directory: ${{ env.SRCDIR }}
+        run: |
+          export QUILT_PATCHES=debian/patches
+          quilt push -a || [ $? -eq 2 ]   # 2 = nothing to apply
 
       - name: Install build dependencies
         working-directory: ${{ env.SRCDIR }}
