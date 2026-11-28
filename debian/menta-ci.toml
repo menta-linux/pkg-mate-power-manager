@@ -1,3 +1,5 @@
 schema_version = 1
 release_policy = "snapshot"
 snapshot_reason = "Upstream has not released the 1.29 development series; Menta tracks upstream git HEAD with a fixed 1.29.0 base version."
+upstream_url = "https://github.com/mate-desktop/mate-power-manager"
+snapshot_base = "1.29.0"

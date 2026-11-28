@@ -1,4 +1,0 @@
-version=4
-# Menta builds a git snapshot of upstream master (see .github/workflows/build.yml)
-opts="mode=git,pretty=1.29.0+git%cd.%h,gitmode=full" \
-https://github.com/mate-desktop/mate-power-manager.git HEAD
