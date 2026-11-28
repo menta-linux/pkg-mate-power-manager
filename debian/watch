@@ -1,3 +1,4 @@
 version=4
-https://git.mate-desktop.org/mate-power-manager/ \
-    snapshot/mate-power-manager-(\d\.(?:[0-9]+|)[24680]\.\d)\.tar\.xz
+# Menta builds a git snapshot of upstream master (see .github/workflows/build.yml)
+opts="mode=git,pretty=1.29.0+git%cd.%h,gitmode=full" \
+https://github.com/mate-desktop/mate-power-manager.git HEAD
